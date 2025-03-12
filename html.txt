@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goodwill Education Hub</title>
+    <link rel="icon" type="image/x-icon" href="images/logojyadro-removebg-preview.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="top">
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="#top">
+                        <img src="images/logojyadro-removebg-preview.png" alt="Goodwill Education Hub">
+                        <span class="institute-name">Goodwill Education Hub Pvt ltd</span>
+                    </a>
+                </div>
+                
+                <div class="mobile-menu">
+                    <div class="menu-dots" id="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#top">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>Start Your Learning<br>Journey Today</h1>
+                    <p>Quality education at affordable prices with personalized attention and practical training</p>
+                    <div class="hero-buttons">
+                        <a href="#courses" class="primary-btn">VIEW COURSES</a>
+                        <a href="#contact" class="secondary-btn">CONTACT US</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">STUDENTS</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">YEARS EXPERIENCE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="hero-slider">
+                <div class="slide"><img src="images/coachiingclasses.webp" alt="Slide 1"></div>
+                <div class="slide"><img src="images/whatsapplogopng.png" alt="Slide 2"></div>
+                <div class="slide"><img src="images/photographystudio.avif" alt="Slide 3"></div>
+                <div class="slide"><img src="images/hardwareimage.jpg" alt="Slide 4"></div>
+                <div class="slide"><img src="images/studentlearning.jpg" alt="Slide 5"></div>
+            </div> -->
+        </section>
+    </header>
+
+    <main>
+        <section class="courses" id="courses">
+            <h2>Our Courses</h2>
+            <div class="course-grid">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="images/computerbasuccourse.avif" alt="Computer Basic Courses">
+                        <div class="course-tag">Most Popular</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Computer Basic Courses</h3>
+                        <p class="duration">Duration: 2-3 months</p>
+                        <ul class="course-features">
+                            <li>MS Office (Word, Excel, PowerPoint)</li>
+                            <li>Basic Internet & Email</li>
+                            <li>Typing Skills</li>
+                            <li>File Management</li>
+                        </ul>
+                        <!-- <div class="course-footer">
+                            <button class="enroll-btn">Enquire Now</button>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="images/computeroperator.jpg" alt="Computer Operator Classes">
+                        <div class="course-tag">Job Oriented</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Computer Operator Classes</h3>
+                        <p class="duration">Duration: 4-6 months</p>
+                        <ul class="course-features">
+                            <li>Advanced MS Office</li>
+                            <li>Data Entry Training</li>
+                            <li>Tally & Accounting Basics</li>
+                            <li>Office Management</li>
+                        </ul>
+                        <!-- <div class="course-footer">
+                            <button class="enroll-btn">Enquire Now</button>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="images/english.jpg" alt="English Language">
+                        <div class="course-tag">Basic to Advanced</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>English Language</h3>
+                        <p class="duration">Duration: 3 months</p>
+                        <ul class="course-features">
+                            <li>Spoken English</li>
+                            <li>Basic Grammar</li>
+                            <li>Interview Preparation</li>
+                            <li>Personality Development</li>
+                        </ul>
+                        <!-- <div class="course-footer">
+                            <button class="enroll-btn">Enquire Now</button>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="images/coachiingclasses.webp" alt="Coaching Classes">
+                        <div class="course-tag">Flexible Timing</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Coaching Classes</h3>
+                        <p class="duration">Duration: As per need</p>
+                        <ul class="course-features">
+                            <li>School Subjects (8th-12th)</li>
+                            <li>Small Batch Sizes</li>
+                            <li>Individual Attention</li>
+                            <li>Regular Tests</li>
+                        </ul>
+                        <!-- <div class="course-footer">
+                            <button class="enroll-btn">Enquire Now</button>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="images/loksewa.jpg" alt="Loksewa Classes">
+                        <div class="course-tag">Government Jobs</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Loksewa Classes</h3>
+                        <p class="duration">Duration: 3-6 months</p>
+                        <ul class="course-features">
+                            <li>Complete Syllabus Coverage</li>
+                            <li>Mock Tests & Practice Sets</li>
+                            <li>Previous Year Papers</li>
+                            <li>Expert Faculty Guidance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="images/koreanclass.webp" alt="Korean Language">
+                        <div class="course-tag">Language</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Korean Language</h3>
+                        <p class="duration">Duration: 3 months</p>
+                        <ul class="course-features">
+                            <li>Basic to Intermediate Korean</li>
+                            <li>Speaking & Writing Skills</li>
+                            <li>Cultural Understanding</li>
+                            <li>EPS TOPIK Preparation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services" id="services">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/photographystudio.avif" alt="Photography Services">
+                        <div class="service-tag">Professional</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Photography Services</h3>
+                        <ul class="service-features">
+                            <li>Portrait Photography</li>
+                            <li>Event Coverage</li>
+                            <li>Photo Editing</li>
+                            <li>Digital & Print Delivery</li>
+                        </ul>
+                        <button class="service-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/computerrepair.jpg" alt="Computer Repair">
+                        <div class="service-tag">Expert</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Computer Repair</h3>
+                        <ul class="service-features">
+                            <li>Hardware Troubleshooting</li>
+                            <li>Software Installation</li>
+                            <li>Virus Removal</li>
+                            <li>Data Recovery</li>
+                        </ul>
+                        <button class="service-btn">Get Help</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/electronicshop.webp" alt="Electronic Items">
+                        <div class="service-tag">Quality</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Electronic Items</h3>
+                        <ul class="service-features">
+                            <li>LED Bulbs & Lighting</li>
+                            <li>Electric Wires & Cables</li>
+                            <li>Switches & Sockets</li>
+                            <li>Electronic Accessories</li>
+                        </ul>
+                        <button class="service-btn">Shop Now</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/hardwareimage.jpg" alt="Hardware Shop">
+                        <div class="service-tag">Complete</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Hardware Shop</h3>
+                        <ul class="service-features">
+                            <li>Paint & Painting Tools</li>
+                            <li>Household Hardware</li>
+                            <li>Home Accessories</li>
+                            <li>Construction Materials</li>
+                        </ul>
+                        <button class="service-btn">Explore</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/printingimage.jpeg" alt="Printing Services">
+                        <div class="service-tag">Fast</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Printing Services</h3>
+                        <ul class="service-features">
+                            <li>Document Printing</li>
+                            <li>Photo Printing</li>
+                            <li>Banner & Posters</li>
+                            <li>Business Cards</li>
+                        </ul>
+                        <button class="service-btn">Print Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>We are committed to providing quality education and professional training to help students achieve their career goals.</p>
+                <div class="social-links">
+                    <!-- <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a> -->
+                    
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#top">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section" id="contact">
+                <h3>Contact Info</h3>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Urlabari-3, Mangalbare, Morang</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+9779746977202" class="phone-link">
+                            <span>+977 9746977202</span>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:goodwillinstitute2018@gmail.com" class="email-link">
+                            <span>goodwillinstitute2018@gmail.com</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            
+
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/18yvkXfB19/" class="social-icon" target="_blank" rel="noopener">
+                        <img src="images/facebookicon2.webp" alt="Facebook">
+                    </a>
+                    <a href="https://wa.me/981-6933687" class="social-icon" target="_blank" rel="noopener">
+                        <img src="images/whatsappicon2.svg" alt="WhatsApp">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2024 Goodwill Education Hub. All rights reserved.</p>
+                
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
