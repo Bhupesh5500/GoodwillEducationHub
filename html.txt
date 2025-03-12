@@ -21,8 +21,8 @@
                     </a>
                 </div>
                 
-                <div class="mobile-menu">
-                    <div class="menu-dots" id="mobile-menu-toggle">
+                <div class="mobile-menu" id="mobile-menu-toggle">
+                    <div class="menu-dots">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -30,11 +30,11 @@
                 </div>
 
                 <ul class="nav-links" id="nav-links">
-                    <li><a href="#top">Home</a></li>
-                    <li><a href="#courses">Courses</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li class="nav-item"><a href="#top">Home</a></li>
+                    <li class="nav-item"><a href="#courses">Courses</a></li>
+                    <li class="nav-item"><a href="#services">Services</a></li>
+                    <li class="nav-item"><a href="#about">About</a></li>
+                    <li class="nav-item"><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -62,13 +62,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="hero-slider">
-                <div class="slide"><img src="images/coachiingclasses.webp" alt="Slide 1"></div>
-                <div class="slide"><img src="images/whatsapplogopng.png" alt="Slide 2"></div>
-                <div class="slide"><img src="images/photographystudio.avif" alt="Slide 3"></div>
-                <div class="slide"><img src="images/hardwareimage.jpg" alt="Slide 4"></div>
-                <div class="slide"><img src="images/studentlearning.jpg" alt="Slide 5"></div>
-            </div> -->
         </section>
     </header>
 
@@ -90,9 +83,6 @@
                             <li>Typing Skills</li>
                             <li>File Management</li>
                         </ul>
-                        <!-- <div class="course-footer">
-                            <button class="enroll-btn">Enquire Now</button>
-                        </div> -->
                     </div>
                 </div>
 
@@ -328,8 +318,6 @@
                     </li>
                 </ul>
             </div>
-
-            
 
             <div class="footer-section">
                 <h3>Connect With Us</h3>

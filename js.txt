@@ -104,3 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setInterval(nextSlide, 1000);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+        document.getElementById('nav-links').classList.toggle('active');
+    });
+});
