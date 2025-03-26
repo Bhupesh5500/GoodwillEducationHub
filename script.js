@@ -110,3 +110,46 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('nav-links').classList.toggle('active');
     });
 });
+
+// Add this function to your existing script.js
+function getDirections() {
+    const destinationLat = 26.6645291169659;
+    const destinationLng = 87.5962672804697;
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const userLat = position.coords.latitude;
+                const userLng = position.coords.longitude;
+                const directionsURL = `https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLng}&destination=${destinationLat},${destinationLng}&travelmode=driving`;
+                window.open(directionsURL, '_blank');
+            },
+            (error) => {
+                console.error("Error getting location:", error);
+                const directionsURL = `https://www.google.com/maps/dir/?api=1&destination=${destinationLat},${destinationLng}&travelmode=driving`;
+                window.open(directionsURL, '_blank');
+            }
+        );
+    } else {
+        alert("Geolocation is not supported by your browser. Please use Google Maps directly.");
+        const mapsURL = `https://www.google.com/maps/search/?api=1&query=${destinationLat},${destinationLng}`;
+        window.open(mapsURL, '_blank');
+    }
+}
+
+function initMap() {
+    const map = new google.maps.Map(document.getElementById('map'), {
+      center: { lat: YOUR_LATITUDE, lng: YOUR_LONGITUDE },
+      zoom: 12,
+      scrollwheel: true,
+      zoomControl: true,
+      fullscreenControl: true
+    });
+  
+    // Make map responsive
+    google.maps.event.addDomListener(window, 'resize', function() {
+      const center = map.getCenter();
+      google.maps.event.trigger(map, 'resize');
+      map.setCenter(center);
+    });
+  }
