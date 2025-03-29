@@ -1,28 +1,44 @@
-// Smooth scroll to services section
-function scrollToServices() {
-    document.getElementById('services').scrollIntoView({
-        behavior: 'smooth'
-    });
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    const mobileDropdown = document.getElementById('mobile-dropdown');
+    // Smooth scroll to services section
+    function scrollToServices() {
+        document.getElementById('services').scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
 
-    hamburger.addEventListener('click', () => {
+    // Get the mobile menu toggle button and nav links
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    // Toggle mobile menu
+    mobileMenu.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mobileMenu.classList.toggle('active');
         navLinks.classList.toggle('active');
-        hamburger.classList.toggle('active');
     });
 
-    mobileDropdown.addEventListener('change', (e) => {
-        const selectedValue = e.target.value; 
-        if (selectedValue) {
-            window.location.href = selectedValue;
-            mobileDropdown.value = ""; // Reset dropdown to default option
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-item a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && !navLinks.contains(e.target)) {
+            mobileMenu.classList.remove('active');
+            navLinks.classList.remove('active');
         }
     });
 
+    // Prevent menu from closing when clicking inside nav-links
+    navLinks.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+
+    // Smooth scroll for internal navigation links (anchor links)
     document.querySelectorAll('a[href^="#"], select.mobile-dropdown').forEach(element => {
         if (element.tagName === 'SELECT') {
             element.addEventListener('change', function(e) {
@@ -42,28 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const targetElement = document.querySelector(targetId);
         
         if (targetElement) {
-            // Smooth scroll to target
             targetElement.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
-
-            // Add highlight effect if it's the contact section
-            if (targetId === '#contact-section') {
-                // Remove existing highlight if any
-                targetElement.classList.remove('highlight');
-                
-                // Trigger reflow
-                void targetElement.offsetWidth;
-                
-                // Add highlight class
-                targetElement.classList.add('highlight');
-                
-                // Remove highlight class after animation
-                setTimeout(() => {
-                    targetElement.classList.remove('highlight');
-                }, 2000);
-            }
         }
     }
 
@@ -84,10 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
-        document.getElementById('nav-links').classList.toggle('active');
-    });
-
+    // Hero slider functionality
     let currentSlide = 0;
     const slides = document.querySelectorAll('.hero-slider .slide');
     const totalSlides = slides.length;
@@ -102,54 +97,49 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(currentSlide);
     }
 
-    setInterval(nextSlide, 1000);
-});
+    setInterval(nextSlide, 3000); // Changed to 3000ms for better user experience
 
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
-        document.getElementById('nav-links').classList.toggle('active');
-    });
-});
+    // Geolocation and Directions to a specific location
+    function getDirections() {
+        const destinationLat = 26.6645291169659;
+        const destinationLng = 87.5962672804697;
 
-// Add this function to your existing script.js
-function getDirections() {
-    const destinationLat = 26.6645291169659;
-    const destinationLng = 87.5962672804697;
-
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                const userLat = position.coords.latitude;
-                const userLng = position.coords.longitude;
-                const directionsURL = `https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLng}&destination=${destinationLat},${destinationLng}&travelmode=driving`;
-                window.open(directionsURL, '_blank');
-            },
-            (error) => {
-                console.error("Error getting location:", error);
-                const directionsURL = `https://www.google.com/maps/dir/?api=1&destination=${destinationLat},${destinationLng}&travelmode=driving`;
-                window.open(directionsURL, '_blank');
-            }
-        );
-    } else {
-        alert("Geolocation is not supported by your browser. Please use Google Maps directly.");
-        const mapsURL = `https://www.google.com/maps/search/?api=1&query=${destinationLat},${destinationLng}`;
-        window.open(mapsURL, '_blank');
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const userLat = position.coords.latitude;
+                    const userLng = position.coords.longitude;
+                    const directionsURL = `https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLng}&destination=${destinationLat},${destinationLng}&travelmode=driving`;
+                    window.open(directionsURL, '_blank');
+                },
+                (error) => {
+                    console.error("Error getting location:", error);
+                    const directionsURL = `https://www.google.com/maps/dir/?api=1&destination=${destinationLat},${destinationLng}&travelmode=driving`;
+                    window.open(directionsURL, '_blank');
+                }
+            );
+        } else {
+            alert("Geolocation is not supported by your browser. Please use Google Maps directly.");
+            const mapsURL = `https://www.google.com/maps/search/?api=1&query=${destinationLat},${destinationLng}`;
+            window.open(mapsURL, '_blank');
+        }
     }
-}
 
-function initMap() {
-    const map = new google.maps.Map(document.getElementById('map'), {
-      center: { lat: YOUR_LATITUDE, lng: YOUR_LONGITUDE },
-      zoom: 12,
-      scrollwheel: true,
-      zoomControl: true,
-      fullscreenControl: true
-    });
-  
-    // Make map responsive
-    google.maps.event.addDomListener(window, 'resize', function() {
-      const center = map.getCenter();
-      google.maps.event.trigger(map, 'resize');
-      map.setCenter(center);
-    });
-  }
+    // Initialize Google Map
+    function initMap() {
+        const map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: YOUR_LATITUDE, lng: YOUR_LONGITUDE }, // Replace with actual latitude/longitude
+            zoom: 12,
+            scrollwheel: true,
+            zoomControl: true,
+            fullscreenControl: true
+        });
+    
+        // Make map responsive
+        google.maps.event.addDomListener(window, 'resize', function() {
+            const center = map.getCenter();
+            google.maps.event.trigger(map, 'resize');
+            map.setCenter(center);
+        });
+    }
+});
