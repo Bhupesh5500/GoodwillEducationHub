@@ -101,8 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Geolocation and Directions to a specific location
     function getDirections() {
-        const destinationLat = 26.6645291169659;
-        const destinationLng = 87.5962672804697;
+        const destinationLat = 26.664529176699215; // Updated latitude
+        const destinationLng = 87.59855790965607; // Updated longitude
 
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
