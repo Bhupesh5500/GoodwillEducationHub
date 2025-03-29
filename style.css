@@ -1758,6 +1758,26 @@ body {
     text-align: center;
 }
 
+.directions-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50 !important; /* Ensure button background is applied */
+    color: white !important; /* Ensure text color is applied */
+    border: none !important; /* Remove any border */
+    border-radius: 5px !important; /* Apply rounded corners */
+    cursor: pointer !important; /* Ensure pointer cursor */
+    display: inline-block !important; /* Ensure button is displayed inline */
+    width: auto !important; /* Ensure width is auto if it's being affected */
+    max-width: 100% !important; /* Prevent it from being squished */
+    transition: background-color 0.3s ease !important; /* Smooth hover transition */
+}
+
+.directions-container button:hover {
+    background-color: #45a049 !important; /* Ensure hover background is applied */
+}
+
+
+
 .directions-btn {
     display: inline-flex;
     align-items: center;

@@ -101,8 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Geolocation and Directions to a specific location
     function getDirections() {
-        const destinationLat = 26.664529176699215; // Updated latitude
-        const destinationLng = 87.59855790965607; // Updated longitude
+        const destinationLat = 26.664364200662238; // Updated latitude
+        const destinationLng = 87.6012096181491; // Updated longitude
 
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
@@ -114,32 +114,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 (error) => {
                     console.error("Error getting location:", error);
-                    const directionsURL = `https://www.google.com/maps/dir/?api=1&destination=${destinationLat},${destinationLng}&travelmode=driving`;
-                    window.open(directionsURL, '_blank');
+                    const fallbackURL = `https://www.google.com/maps/dir/?api=1&destination=${destinationLat},${destinationLng}&travelmode=driving`;
+                    window.open(fallbackURL, '_blank');
                 }
             );
         } else {
             alert("Geolocation is not supported by your browser. Please use Google Maps directly.");
-            const mapsURL = `https://www.google.com/maps/search/?api=1&query=${destinationLat},${destinationLng}`;
-            window.open(mapsURL, '_blank');
+            const fallbackURL = `https://www.google.com/maps/dir/?api=1&destination=${destinationLat},${destinationLng}&travelmode=driving`;
+            window.open(fallbackURL, '_blank');
         }
     }
 
-    // Initialize Google Map
+    // Attach the function to the button
+    document.querySelector('.directions-btn').addEventListener('click', getDirections);
+
+    // Initialize Google Map with iframe
     function initMap() {
-        const map = new google.maps.Map(document.getElementById('map'), {
-            center: { lat: YOUR_LATITUDE, lng: YOUR_LONGITUDE }, // Replace with actual latitude/longitude
-            zoom: 12,
-            scrollwheel: true,
-            zoomControl: true,
-            fullscreenControl: true
-        });
-    
-        // Make map responsive
-        google.maps.event.addDomListener(window, 'resize', function() {
-            const center = map.getCenter();
-            google.maps.event.trigger(map, 'resize');
-            map.setCenter(center);
-        });
+        const iframe = document.createElement('iframe');
+        iframe.width = '600';
+        iframe.height = '450';
+        iframe.style.border = '0';
+        iframe.loading = 'lazy';
+        iframe.referrerpolicy = 'no-referrer-when-downgrade';
+        iframe.src = `https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d169.45428380542495!2d87.6012096181491!3d26.664364200662238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e6!4m3!3m2!1d26.664337399999997!2d87.60127229999999!4m3!3m2!1d26.6392439!2d87.7228485!5e1!3m2!1sen!2snp!4v1743236881865!5m2!1sen!2snp`; // Updated iframe URL
+
+        const mapContainer = document.getElementById('map');
+        mapContainer.innerHTML = ''; // Clear any previous map
+        mapContainer.appendChild(iframe);
     }
-});
+
+    // Call initMap to load the iframe map when the page is ready
+    initMap();
+}); // End of JavaScript
